@@ -1,0 +1,12 @@
+.lock_icon {
+    @include fontawesome(false);
+    width: 1rem;
+    height: auto;
+    padding: 0 .1rem;
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 2rem;
+    &::before {
+        content: "\f023";
+    }
+}

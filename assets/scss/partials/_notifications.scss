@@ -1,0 +1,300 @@
+.notifications {
+    margin: 0;
+    padding: 1rem;
+    list-style: none;
+    width: 100%;
+    box-sizing: border-box;
+    >div {
+        transition: all .15s ease-in;
+        width: 100%;
+        padding: .5rem .25rem;
+        box-sizing: border-box;
+        color: rgba(0, 0, 0, 0.8);
+        max-height: 100px;
+        position: relative;
+        margin-left: 0;
+        overflow: hidden;
+        &.shrink {
+            max-height: 0;
+            padding: 0 .25rem;
+            margin-bottom: 0 !important;
+        }
+        .iphone4s & {
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                max-height: 0;
+                padding: 0;
+                margin: 0;
+            }
+        }
+        .iphone5s &,
+        .iphone5c &,
+        .nexus5 &,
+        .s5 &,
+        .htc-one & {
+            &:nth-child(5),
+            &:nth-child(6) {
+                max-height: 0;
+                padding: 0;
+                margin: 0;
+                border-width: 0;
+            }
+        }
+        .iphone8 & {
+            &:nth-child(6) {
+                max-height: 0;
+                padding: 0;
+                margin: 0;
+            }
+        }
+        .ios12 & {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            margin-bottom: .5rem;
+        }
+        .pie & {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+            &:first-child:not(.shrink) {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            &:last-child:not(.shrink) {
+                border-bottom-width: 0px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+        .nexus5.pie &,
+        .s5.pie &,
+        .htc-one.pie & {
+            &:nth-child(4) {
+                border-radius: 0 0 10px 10px;
+                border-bottom-width: 0px;
+            }
+        }
+        .top {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            box-sizing: border-box;
+            .ios12 & {
+                line-height: 1.25rem;
+            }
+            .pie & {
+                line-height: .7rem;
+                padding: .75rem;
+                padding-bottom: .5rem;
+            }
+            >div {
+                padding-left: .15rem;
+            }
+            .icon {
+                order: 1;
+                .ios12 & {
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    border-radius: 5px;
+                }
+                .pie & {
+                    @include fontawesome(true);
+                    font-weight: 300;
+                }
+            }
+            .title {
+                order: 2;
+                display: flex;
+                font-size: .7rem;
+                text-transform: uppercase;
+                .pie & {
+                    margin-top: .125rem;
+                }
+                &::after {
+                    .pie & {
+                        content: '\2022';
+                        margin: 0.05rem .125rem;
+                    }
+                }
+            }
+            .time_ago {
+                order: 3;
+                font-size: .7rem;
+                .ios12 & {
+                    margin-left: auto;
+                    margin-right: .25rem;
+                }
+                .pie & {
+                    margin-top: .125rem;
+                }
+            }
+        }
+        .image {
+            display: none;
+            .pie & {
+                display: block;
+                position: absolute;
+                right: 0.75rem;
+                top: 1.25rem;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 100%;
+            }
+        }
+        .description {
+            font-size: .8rem;
+            text-align: left;
+            padding: .5rem .25rem;
+            .pie & {
+                margin-top: .125rem;
+                padding: 0 1rem .5rem;
+            }
+        }
+        &.instagram {
+            .top {
+                .icon {
+                    .ios12 & {
+                        background-image: url('../images/icons/instagram.png');
+                    }
+                    .pie & {
+                        &::after {
+                            content: '\f16d';
+                        }
+                    }
+                }
+            }
+            .image {
+                .pie & {
+                    background-image: url('../images/apps/instagram.png');
+                }
+            }
+        }
+        &.facebook {
+            .top {
+                .icon {
+                    .ios12 & {
+                        background-image: url('../images/icons/facebook.png');
+                    }
+                    .pie & {
+                        &::after {
+                            content: '\f39e';
+                        }
+                    }
+                }
+            }
+            .image {
+                .pie & {
+                    background-image: url('../images/apps/facebook.png');
+                }
+            }
+        }
+        &.whatsapp {
+            .top {
+                .icon {
+                    .ios12 & {
+                        background-image: url('../images/icons/whatsapp.png');
+                    }
+                    .pie & {
+                        &::after {
+                            content: '\f232';
+                        }
+                    }
+                }
+            }
+            .image {
+                .pie & {
+                    background-image: url('../images/apps/whatsapp.png');
+                }
+            }
+        }
+        &.twitter {
+            .top {
+                .icon {
+                    .ios12 & {
+                        background-image: url('../images/icons/twitter.png');
+                    }
+                    .pie & {
+                        &::after {
+                            content: '\f099';
+                        }
+                    }
+                }
+            }
+            .image {
+                .pie & {
+                    background-image: url('../images/apps/twitter.png');
+                }
+            }
+        }
+        &.snapchat {
+            .top {
+                .icon {
+                    .ios12 & {
+                        background-image: url('../images/icons/snapchat.png');
+                    }
+                    .pie & {
+                        &::after {
+                            content: '\f2ac';
+                        }
+                    }
+                }
+            }
+            .image {
+                .pie & {
+                    background-image: url('../images/apps/snapchat.png');
+                }
+            }
+        }
+        &.telegram {
+            .top {
+                .icon {
+                    .ios12 & {
+                        background-image: url('../images/icons/telegram.png');
+                    }
+                    .pie & {
+                        &::after {
+                            content: '\f3fe';
+                        }
+                    }
+                }
+            }
+            .image {
+                .pie & {
+                    background-image: url('../images/apps/telegram.png');
+                }
+            }
+        }
+    }
+}
+
+.notifications {
+    &.swipe {
+        >div {
+            &:nth-child(1) {
+                transition: all .3s ease-out;
+            }
+            &:nth-child(2) {
+                transition: all .4s ease-out;
+            }
+            &:nth-child(3) {
+                transition: all .5s ease-out;
+            }
+            &:nth-child(4) {
+                transition: all .6s ease-out;
+            }
+            &:nth-child(5) {
+                transition: all .7s ease-out;
+            }
+            &:nth-child(6) {
+                transition: all .8s ease-out;
+            }
+            margin-left: 110% !important;
+        }
+    }
+}

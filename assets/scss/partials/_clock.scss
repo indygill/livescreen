@@ -1,0 +1,21 @@
+.clock {
+    text-align: center;
+    color: #fff;
+    margin-top: 2rem;
+    .time {
+        font-size: 3.5rem;
+        .nougat & {
+            font-size: 4.5rem;
+        }
+    }
+    .windows-phone-8 & {
+        position: absolute;
+        bottom: 2rem;
+        left: 1rem;
+        text-align: left;
+        .date {
+            font-size: 2rem;
+            width: 60%;
+        }
+    }
+}

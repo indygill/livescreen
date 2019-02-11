@@ -1,0 +1,12 @@
+@mixin windowsphonefontface() {
+    @font-face {
+        font-family: 'Segoe WP N';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Segoe WP N'), url('../css/fonts/windows-phone-8/SegoeWPN.woff') format('woff');
+    }
+}
+
+@mixin windowsphonefont() {
+    font-family: 'Segoe WP N', sans-serif;
+}

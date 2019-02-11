@@ -1,0 +1,122 @@
+.status_bar {
+    width: 98%;
+    display: flex;
+    flex-wrap: nowrap;
+    color: #fff;
+    padding-top: .25rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    >div {
+        .ios12 & {
+            &:nth-child(4) {
+                margin-left: auto;
+            }
+        }
+        .high-sierra & {
+            &:nth-child(1) {
+                margin-left: auto;
+            }
+        }
+        .pie & {
+            &:nth-child(2) {
+                margin-left: auto;
+            }
+        }
+        .windows-phone-8 & {
+            &:nth-child(4) {
+                margin-left: auto;
+            }
+        }
+    }
+    .iphone-x & {
+        width: 88%;
+        padding-top: .5rem;
+        >div {
+            &:nth-child(4) {
+                margin-left: 0;
+            }
+            &:nth-child(2) {
+                margin-left: auto;
+            }
+        }
+    }
+    .signal,
+    .wifi,
+    .battery,
+    .bluetooth,
+    .user,
+    .lock {
+        @include fontawesome(false);
+        width: 1rem;
+        height: auto;
+        padding: 0 .1rem;
+        font-size: .7rem;
+        order: 2;
+    }
+    .date,
+    .time {
+        order: 2;
+        .high-sierra & {
+            order: 3;
+        }
+    }
+    .carrier {
+        padding: 0 .125rem;
+        font-size: .7rem;
+        .ios12:not(.iphone-x) &,
+        .windows-phone-8 & {
+            order: 2;
+        }
+    }
+    .wifi {
+        &::before {
+            content: "\f1eb";
+        }
+    }
+    .bluetooth {
+        @include fontawesome(true);
+        .iphone-x & {
+            display: none;
+        }
+        &::before {
+            content: "\f294";
+        }
+    }
+    .signal {
+        .ios12 &,
+        .windows-phone-8 & {
+            order: 1;
+        }
+        .iphone-x & {
+            order: 2;
+        }
+        &::before {
+            content: "\f012";
+        }
+    }
+    .battery {
+        .windows-phone-8 & {
+            margin-right: 2rem;
+        }
+        &::before {
+            content: "\f241";
+        }
+    }
+    .date {
+        font-size: .7rem;
+        padding: 0 .125rem;
+    }
+    .time {
+        font-size: .7rem;
+        padding: 0 .125rem;
+    }
+    .lock {
+        .ios12 & {
+            margin-left: auto;
+            margin-right: 3rem;
+        }
+        &::before {
+            content: "\f023";
+        }
+    }
+}

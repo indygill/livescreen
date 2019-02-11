@@ -1,0 +1,119 @@
+.shortcuts {
+    width: 90%;
+    position: absolute;
+    bottom: .5rem;
+    left: 5%;
+    padding: .25rem;
+    box-sizing: border-box;
+    color: #fff;
+    .ios12.iphone-x &,
+    .windows-phone-8 &,
+    .pie & {
+        display: flex;
+    }
+    .pie & {
+        width: 95%;
+        left: 2.5%;
+    }
+    >div {
+        .ios12:not(.iphone-x) & {
+            display: inline-block;
+        }
+        .pie & {
+            font-size: .7rem;
+        }
+        .windows-phone-8 & {
+            font-size: .7rem;
+            padding-right: 2rem;
+        }
+        &.first {
+            order: 1;
+            margin-left: 0;
+            @include fontawesome(false);
+            &::after {
+                content: '\f095';
+                .ios12:not(.iphone-x) & {
+                    content: '\25CF';
+                }
+            }
+        }
+        &.second {
+            order: 2;
+            margin: 0 auto;
+            @include fontawesome(false);
+            position: relative;
+            .macbook & {
+                margin-bottom: 3rem;
+                font-size: 1.25rem;
+            }
+            &::after {
+                content: '\f023';
+                .ios12:not(.iphone-x) & {
+                    content: '\25CF';
+                    padding: 0 .25rem;
+                }
+                .ios12.iphone-x & {
+                    content: '';
+                    width: 100px;
+                    height: 5px;
+                    border-radius: 5px;
+                    margin-top: .5rem;
+                    display: block;
+                    background-color: #fff;
+                    position: absolute;
+                    left: -50px;
+                    bottom: .5rem;
+                }
+                .macbook & {
+                    content: '\f057';
+                    font-weight: 300;
+                }
+                .windows-phone-8 & {
+                    content: '\f0e0';
+                    font-weight: 300;
+                }
+            }
+        }
+        &.third {
+            order: 3;
+            margin-right: 0;
+            @include fontawesome(false);
+            &::after {
+                content: '\f030';
+                .ios12:not(.iphone-x) & {
+                    font-size: .7rem;
+                }
+                .windows-phone-8 & {
+                    content: '\f075';
+                    font-weight: 300;
+                }
+            }
+        }
+        .ios12.iphone-x & {
+            &.first,
+            &.third {
+                background-color: rgba(0, 0, 0, .25);
+                width: 3rem;
+                height: 3rem;
+                line-height: 3rem;
+                border-radius: 100%;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+        .macbook & {
+            &.first,
+            &.third {
+                display: none
+            }
+        }
+        .windows-phone-8 & {
+            &.first,
+            &.second,
+            &.third {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+}

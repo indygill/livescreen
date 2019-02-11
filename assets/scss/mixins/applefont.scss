@@ -1,0 +1,11 @@
+@mixin applefontface() {
+    @font-face {
+        font-family: "SF Display";
+        font-weight: 200;
+        src: url("../css/fonts/ios/SF-UI-Display-Light.otf");
+    }
+}
+
+@mixin applefont() {
+    font-family: -apple-system, "BlinkMacSystemFont", "SF Display", sans-serif;
+}
