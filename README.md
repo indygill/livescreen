@@ -2,6 +2,7 @@
 #### A small extension for devices.css created by [marvelapp](https://github.com/marvelapp/devices.css)
 #### Completely styled using CSS, implemented using JavaScript for ease of use and installation.
 ##### You can see a [demo here](https://livescreen.developerb.in)
+##### I was tasked with creating an iOS12 interface for a client. Turned into a bit of fun to see how far I can take it.
 
 ## Installation
 1. Include **livescreen.min.css** in your project's <head> (you will need the fonts from /assets/css/fonts)
